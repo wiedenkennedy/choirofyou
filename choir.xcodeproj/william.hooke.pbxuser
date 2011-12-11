@@ -2,16 +2,30 @@
 {
 	280099BD148E2D2400F1979E /* FaceTracker.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {767, 754}}";
+			sepNavIntBoundsRect = "{{0, 0}, {855, 741}}";
 			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{192, 1621}";
+			sepNavVisRange = "{641, 1381}";
 		};
 	};
 	280099BE148E2D2400F1979E /* FaceTracker.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {767, 949}}";
+			sepNavIntBoundsRect = "{{0, 0}, {855, 936}}";
 			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 1715}";
+			sepNavVisRange = "{0, 1686}";
+		};
+	};
+	28009C2C148E4D4300F1979E /* ofxMask.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {855, 936}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{1879, 686}";
+		};
+	};
+	28009C2D148E4D4300F1979E /* ofxMask.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {855, 650}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{832, 1069}";
 		};
 	};
 	282CECF414945BE200A0E656 /* FaceTracker2.h */ = {
@@ -30,30 +44,30 @@
 	};
 	2833FD08148E6A520073C07A /* LiveFace.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1115, 611}}";
+			sepNavIntBoundsRect = "{{0, 0}, {812, 598}}";
 			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{349, 1572}";
+			sepNavVisRange = "{349, 1517}";
 		};
 	};
 	2833FD09148E6A520073C07A /* LiveFace.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {707, 780}}";
+			sepNavIntBoundsRect = "{{0, 0}, {812, 780}}";
 			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{1227, 886}";
+			sepNavVisRange = "{0, 1653}";
 		};
 	};
 	2833FFDD148E9BB10073C07A /* ChoirFace.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1115, 728}}";
+			sepNavIntBoundsRect = "{{0, 0}, {855, 884}}";
 			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 1705}";
+			sepNavVisRange = "{1691, 568}";
 		};
 	};
 	2833FFDE148E9BB10073C07A /* ChoirFace.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1115, 949}}";
+			sepNavIntBoundsRect = "{{0, 0}, {838, 949}}";
 			sepNavSelRange = "{2450, 0}";
-			sepNavVisRange = "{0, 1795}";
+			sepNavVisRange = "{1654, 1194}";
 		};
 	};
 	7EB7AC62149522820025B699 /* PBXTextBookmark */ = {
@@ -92,7 +106,7 @@
 		fRef = F9BDB8CC1490F9C3001D0A79 /* OscHandler.cpp */;
 		name = "OscHandler.cpp: 46";
 		rLen = 0;
-		rLoc = 829;
+		rLoc = 831;
 		rType = 0;
 		vrLen = 640;
 		vrLoc = 0;
@@ -156,6 +170,20 @@
 		rType = 0;
 		vrLen = 1823;
 		vrLoc = 27;
+	};
+	7EB7AD6A14954AA80025B699 /* Lyrics.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {827, 455}}";
+			sepNavSelRange = "{364, 0}";
+			sepNavVisRange = "{16, 450}";
+		};
+	};
+	7EB7AD6B14954AA80025B699 /* Lyrics.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {812, 1183}}";
+			sepNavSelRange = "{230, 0}";
+			sepNavVisRange = "{0, 786}";
+		};
 	};
 	7EDE509114951AFA00EE8246 /* FaceExample */ = {
 		isa = PBXExecutable;
@@ -275,23 +303,23 @@
 	};
 	E4B69E1D0A3A1BDC003C02F2 /* main.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {767, 441}}";
+			sepNavIntBoundsRect = "{{0, 0}, {781, 412}}";
 			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 221}";
 		};
 	};
 	E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1115, 4511}}";
-			sepNavSelRange = "{5598, 0}";
-			sepNavVisRange = "{0, 1023}";
+			sepNavIntBoundsRect = "{{0, 0}, {812, 4797}}";
+			sepNavSelRange = "{4025, 0}";
+			sepNavVisRange = "{4391, 719}";
 		};
 	};
 	E4B69E1F0A3A1BDC003C02F2 /* testApp.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1115, 962}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 593}";
+			sepNavIntBoundsRect = "{{0, 0}, {812, 1014}}";
+			sepNavSelRange = "{1175, 0}";
+			sepNavVisRange = "{14, 505}";
 		};
 	};
 	E4EB691F138AFCF100A09F29 /* CoreOF.xcconfig */ = {
@@ -303,9 +331,9 @@
 	};
 	F9BDB8CC1490F9C3001D0A79 /* OscHandler.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {781, 1599}}";
-			sepNavSelRange = "{829, 0}";
-			sepNavVisRange = "{732, 634}";
+			sepNavIntBoundsRect = "{{0, 0}, {781, 1521}}";
+			sepNavSelRange = "{1505, 0}";
+			sepNavVisRange = "{1302, 427}";
 		};
 	};
 	F9BDB8CD1490F9C3001D0A79 /* OscHandler.h */ = {

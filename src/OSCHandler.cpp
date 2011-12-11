@@ -19,7 +19,7 @@ void OscHandler::setup() {
 }
 
 void OscHandler::update() {
-	
+	/*
 	while (inboxPD.hasWaitingMessages()) {
 		
 		ofxOscMessage m;
@@ -83,7 +83,8 @@ void OscHandler::update() {
 			printf("NO OSC MESSAGE DEFINED FOR %s", (string)(m1.getArgAsString(0)));
 			
 		}
-	}	
+	}
+	*/ 
 }
 
 void OscHandler::setFaces(int number) {

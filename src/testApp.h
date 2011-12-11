@@ -9,6 +9,7 @@
 #include "LiveFace.h"
 #include "ChoirFace.h"
 #include "OscHandler.h"
+#include "Lyrics.h"
 
 using namespace ofxCv;
 
@@ -71,4 +72,6 @@ private:
 	Apex::ofxMask masker;
 	
 	OscHandler messageHandler;
+	
+	Lyrics merryXmasLyrics;
 };

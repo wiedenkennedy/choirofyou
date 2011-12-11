@@ -1101,10 +1101,10 @@
 				2833FD09148E6A520073C07A /* LiveFace.cpp */,
 				2833FFDD148E9BB10073C07A /* ChoirFace.h */,
 				2833FFDE148E9BB10073C07A /* ChoirFace.cpp */,
-				F9BDB8CC1490F9C3001D0A79 /* OscHandler.cpp */,
 				7EB7AD6A14954AA80025B699 /* Lyrics.h */,
 				7EB7AD6B14954AA80025B699 /* Lyrics.cpp */,
 				F9BDB8CD1490F9C3001D0A79 /* OscHandler.h */,
+				F9BDB8CC1490F9C3001D0A79 /* OscHandler.cpp */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;

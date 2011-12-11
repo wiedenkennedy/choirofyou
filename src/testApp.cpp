@@ -36,6 +36,7 @@ void testApp::setup()
 	gui.addSlider("Face H stretch", faceHStretch, 0.1f, 0.9f);
 	
 	messageHandler.setup();
+	merryXmasLyrics.setupLyrics();
 	
 #ifdef _LIVE
 	//cam.setDeviceID(2);
@@ -138,7 +139,7 @@ void testApp::update()
 	// update with new frames
 	if (currentMovieLevel != interactionLevel)
 	{
-		fadeToAlpha += 40;
+		fadeToAlpha += 13;//40;
 		if (fadeToAlpha > 255) fadeToAlpha = 255;
 		if (fadeToAlpha == 255)
 		{
@@ -295,6 +296,13 @@ void testApp::draw()
 		ofRectangle rect = it->second;
 		ofDrawBitmapString(ofToString(it->first), rect.x / scaleFactor, rect.y / scaleFactor);
 	}*/
+	
+	
+	// draw lyrics
+	//string curLyrics = messageHandler.getLyric(); //"this is a lyrics test";
+	//merryXmasLyrics.drawLyrics(messageHandler.getLyric());
+	int oscLyricNum = 1;
+	merryXmasLyrics.drawLyrics(oscLyricNum);
 	
 	// draw choir face triangles
 	if (drawTriangles) {
