@@ -1,5 +1,5 @@
 /*
- *  FaceTracker.cpp
+ *  FaceTracker2.h
  *
  *  Copyright (c) 2011, Neil Mendoza, http://www.neilmendoza.com
  *  All rights reserved. 
@@ -29,60 +29,26 @@
  *  POSSIBILITY OF SUCH DAMAGE. 
  *
  */
-#include "FaceTracker.h"
+#pragma once
 
-#include "ofxSimpleGuiToo.h"
+#include "ofMain.h"
+#include "ofxOpenCv.h"
+#include "Tracker.h"
 
-void FaceTracker::setup(float scaleFactor, int w, int h)
+class FaceTracker2 : public ofThread
 {
-	this->w = w;
-	this->h = h;
-	/*classifier.load(ofToDataPath("haarcascade_frontalface_alt2.xml"));
+public:
+	void setup(float scale, int w, int h);
+	void update(ofVideoGrabber& video);
+	void threadedFunction();
+	ofxCv::RectTracker& getTracker() { return tracker; }
 	
-	// shouldn't need to allocate, resize should do this for us
-	// graySmall.allocate(w * scaleFactor, h * scaleFactor, OF_IMAGE_GRAYSCALE);*/
-	graySmallMat = Mat(h * scaleFactor, w * scaleFactor, CV_8UC1);
-	this->scaleFactor = scaleFactor;
-	tracker.setMaximumAge(10);
-	tracker.setMaximumDistance(100);
-
-}
-
-void FaceTracker::update(ofBaseVideoDraws& video)
-{
-	if (!isThreadRunning())
-	{
-		//videoMat = Mat(h, w, CV_8UC3);
-		videoMat = toCv(video).clone();
-		convertColor(videoMat, grayMat, CV_RGB2GRAY);
-		resize(grayMat, graySmallMat, graySmallMat.size());
-		
-		startThread(true, false);
-	}
-}
-
-/*
-void FaceTracker::drawThresholded(int x, int y, int w, int h)
-{
-	Mat dbg = graySmall & thresholded;
-	drawMat(dbg, x, y, w, h);
-}
-
-void FaceTracker::resetBackground()
-{
-	background.reset();
-}
- */
-
-void FaceTracker::threadedFunction()
-{
-	// detect faces
-	classifier.detectMultiScale(graySmallMat, objects, 1.06, 2,
-								CascadeClassifier::DO_CANNY_PRUNING |
-								//CascadeClassifier::FIND_BIGGEST_OBJECT |
-								//CascadeClassifier::DO_ROUGH_SEARCH |
-								0);
+private:
+	ofxCvColorImage color;
+	ofxCvGrayscaleImage gray;
+	ofxCvGrayscaleImage graySmall;
+	ofxCvHaarFinder finder;
+	ofxCv::RectTracker tracker;
 	
-	// track the objects
-	tracker.track(objects);
-}
+	int w, h;
+};

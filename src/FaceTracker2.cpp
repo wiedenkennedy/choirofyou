@@ -1,5 +1,5 @@
 /*
- *  FaceTracker.cpp
+ *  FaceTracker2.cpp
  *
  *  Copyright (c) 2011, Neil Mendoza, http://www.neilmendoza.com
  *  All rights reserved. 
@@ -29,60 +29,49 @@
  *  POSSIBILITY OF SUCH DAMAGE. 
  *
  */
-#include "FaceTracker.h"
+#include "FaceTracker2.h"
 
-#include "ofxSimpleGuiToo.h"
-
-void FaceTracker::setup(float scaleFactor, int w, int h)
+void FaceTracker2::setup(float scale, int w, int h)
 {
 	this->w = w;
 	this->h = h;
-	/*classifier.load(ofToDataPath("haarcascade_frontalface_alt2.xml"));
+	color.setUseTexture(false);
+	color.allocate(w, h);
+	gray.setUseTexture(false);
+	gray.allocate(w, h);
+	graySmall.setUseTexture(false);
+	graySmall.allocate(w * scale, h * scale);
 	
-	// shouldn't need to allocate, resize should do this for us
-	// graySmall.allocate(w * scaleFactor, h * scaleFactor, OF_IMAGE_GRAYSCALE);*/
-	graySmallMat = Mat(h * scaleFactor, w * scaleFactor, CV_8UC1);
-	this->scaleFactor = scaleFactor;
-	tracker.setMaximumAge(10);
-	tracker.setMaximumDistance(100);
-
+	finder.setup("haarcascade_frontalface_alt2.xml");
+	finder.setScaleHaar(1.06);
 }
 
-void FaceTracker::update(ofBaseVideoDraws& video)
+void FaceTracker2::update(ofVideoGrabber& video)
 {
 	if (!isThreadRunning())
 	{
-		//videoMat = Mat(h, w, CV_8UC3);
-		videoMat = toCv(video).clone();
-		convertColor(videoMat, grayMat, CV_RGB2GRAY);
-		resize(grayMat, graySmallMat, graySmallMat.size());
+		color.setFromPixels(video.getPixels(), w, h);
+		gray = color;
+		graySmall.scaleIntoMe(gray);
 		
 		startThread(true, false);
 	}
 }
 
-/*
-void FaceTracker::drawThresholded(int x, int y, int w, int h)
+void FaceTracker2::threadedFunction()
 {
-	Mat dbg = graySmall & thresholded;
-	drawMat(dbg, x, y, w, h);
-}
-
-void FaceTracker::resetBackground()
-{
-	background.reset();
-}
- */
-
-void FaceTracker::threadedFunction()
-{
-	// detect faces
-	classifier.detectMultiScale(graySmallMat, objects, 1.06, 2,
-								CascadeClassifier::DO_CANNY_PRUNING |
-								//CascadeClassifier::FIND_BIGGEST_OBJECT |
-								//CascadeClassifier::DO_ROUGH_SEARCH |
-								0);
-	
-	// track the objects
+	finder.findHaarObjects(graySmall);
+	vector<cv::Rect> objects;
+	for (int i = 0; i < finder.blobs.size(); ++i)
+	{
+		objects.push_back(cv::Rect(finder.blobs[i].boundingRect.x, 
+								   finder.blobs[i].boundingRect.y, 
+								   finder.blobs[i].boundingRect.width, 
+								   finder.blobs[i].boundingRect.height));
+	}
 	tracker.track(objects);
+	stopThread();
+	// track the objects
+	
+	
 }

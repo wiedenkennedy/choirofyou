@@ -42,26 +42,22 @@ class FaceTracker : public ofThread
 public:
 	void setup(float scaleFactor, int w, int h);
 	void update(ofBaseVideoDraws& video);
-	void drawThresholded(int x, int y, int w, int h);
 	void threadedFunction();
 	vector<cv::Rect> getObjects() { return objects; }
 	RectTracker& getTracker() { return tracker; }
-	void resetBackground();
-
+	//void resetBackground();
+	//void drawThresholded(int x, int y, int w, int h);
+	
 private:
-	RunningBackground background;
+	//RunningBackground background;
 	ofxCv::CascadeClassifier classifier;
 	vector<cv::Rect> objects;
 	vector<cv::Rect> prevObjects;
 	float scaleFactor;
 	
-	Mat gray, graySmall, prevGraySmall;
-	RectTracker tracker;
-	
 	Mat videoMat, videoSmallMat;
+	Mat grayMat, graySmallMat;
 	
-	Mat thresholded;
-	Mat curThresh;
-	
-	int threshold;
+	RectTracker tracker;
+	int w, h;
 };

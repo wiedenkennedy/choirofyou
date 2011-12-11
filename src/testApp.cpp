@@ -101,16 +101,7 @@ void testApp::update()
 		messageHandler.setFaces(tracker.getCurrentLabels().size());
 		//int p = messageHandler.getProximity();
 		
-		/*printf("************** InteractionLevel %i", p);
-		if ( p != NULL ) {
-			interactionLevel = 2 - floor(ofMap(p, 0, 100, 0, 3, true));
-			printf("************** InteractionLevel %i", interactionLevel);	
-		} else {
-			interactionLevel = 0;
-		}
-		printf("************** InteractionLevel %i\n", interactionLevel);	
 
-		*/
 		for (map<unsigned, LiveFace>::iterator it = faces.begin(); it != faces.end(); ++it)
 		{
 			if (!tracker.existsCurrent(it->first)) faces.erase(it);
@@ -127,9 +118,7 @@ void testApp::update()
 				else it->second.setCurrent(rect);
 			}
 		}
-		faceTracker.update(*videoPtr);
-		
-		
+		faceTracker.update(cam);
 	}
 	
 	for (map<unsigned, LiveFace>::iterator it = faces.begin(); it != faces.end(); ++it)
@@ -153,10 +142,11 @@ void testApp::update()
 		if (fadeToAlpha > 255) fadeToAlpha = 255;
 		if (fadeToAlpha == 255)
 		{
+			currentMovieLevel = fadeTo - &choirVideos[0];//interactionLevel;
 			fadeFrom->stop();
 			fadeFrom = NULL;
 			fadeTo = NULL;
-			currentMovieLevel = interactionLevel;
+			
 		}
 		else
 		{
@@ -170,7 +160,7 @@ void testApp::update()
 
 void testApp::draw()
 {
-	if ( currentMovieLevel != interactionLevel )
+	if ( currentMovieLevel != interactionLevel && fadeFrom && fadeTo )
 	{
 		ofEnableAlphaBlending();
 		ofSetColor(255, 255, 255, 255 - fadeToAlpha);
@@ -314,7 +304,7 @@ void testApp::draw()
 	// draw debug images
 	if (gui.isOn())
 	{
-		faceTracker.drawThresholded(ofGetWidth() - 210, ofGetHeight() - 160, 200, 150);
+		//faceTracker.drawThresholded(ofGetWidth() - 210, ofGetHeight() - 160, 200, 150);
 		videoPtr->draw(ofGetWidth() - 210, ofGetHeight() - 320, 200, 150);
 	
 		ostringstream oss;
@@ -346,7 +336,7 @@ void testApp::keyPressed(int key)
 	if (key == '2') interactionLevel = 1;
 	if (key == '3') interactionLevel = 2;
 	if (key == 't') drawTriangles = !drawTriangles;
-	if (key == 'b') faceTracker.resetBackground();
+	//if (key == 'b') faceTracker.resetBackground();
 	if (key == 'g')
 	{
 		gui.toggleDraw();

@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "ofxCv.h"
 #include "ofFileUtils.h"
+#include "FaceTracker2.h"
 #include "FaceTracker.h"
 #include "ofxMask.h"
 #include "LiveFace.h"
@@ -28,7 +29,7 @@ private:
 	float faceSizeLerp;
 	float facePosLerp;
 	
-	FaceTracker faceTracker;
+	FaceTracker2 faceTracker;
 	
 	ofDirectory choirFaceDir;
 	vector<ofFile> faceDataFiles;
