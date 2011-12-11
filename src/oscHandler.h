@@ -12,11 +12,11 @@
 #include "ofMain.h"
 #include "ofxOsc.h"
 
-#define PORT_OUT_PD 9001
+#define PORT_OUT_PD 9000
 #define PORT_IN_PD 8000
-#define PORT_IN_KINECT 9002
+#define PORT_IN_KINECT 9001
 
-#define HOST "localhost"
+#define HOST "10.3.4.38"
 
 class OscHandler {
 

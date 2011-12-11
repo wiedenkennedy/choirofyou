@@ -25,6 +25,8 @@ void OscHandler::update() {
 		ofxOscMessage m;
 		inboxPD.getNextMessage( &m );
 		
+		printf("address:%s \n", m.getAddress().c_str());
+		
 		if ( m.getAddress() == "/interactionLevel") {
 			
 			oscInteractionLevel = m.getArgAsInt32(0);
@@ -33,9 +35,10 @@ void OscHandler::update() {
 			
 			inputLevel = m.getArgAsInt32(0);
 		
-		} else if ( m.getAddress() == "/lyricLine") {
+		} else if ( m.getAddress() == "/lyric") {
 
 			lyricLine = m.getArgAsString(0);
+			printf("lyric: %s\n", lyricLine.c_str());
 			
 		} else if ( m.getAddress() == "/wordTime") {
 
