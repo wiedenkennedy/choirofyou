@@ -204,7 +204,7 @@ void testApp::draw()
 			if ( !unallocatedSlots.empty() ) {	
 					
 				// Find the frame position for that slot on this particular frame
-				const Frame& frame = choirFaces[unallocatedSlots.back()].getFrame(choirVideos[0].getCurrentFrame());
+				const Frame& frame = choirFaces[unallocatedSlots.back()].getFrame(choirVideos[interactionLevel].getCurrentFrame());
 				
 				glPushMatrix();
 
@@ -261,7 +261,7 @@ void testApp::draw()
 		
 		if (choirFaces[selection[i]].getInteractionLevel() <= interactionLevel) {
 
-			const Frame& frame = choirFaces[selection[i]].getFrame(choirVideos[0].getCurrentFrame());
+			const Frame& frame = choirFaces[selection[i]].getFrame(choirVideos[interactionLevel].getCurrentFrame());
 			for (map<unsigned, LiveFace>::iterator it = faces.begin(); it != faces.end(); ++it)
 			{
 				ofRectangle rect = it->second;
@@ -298,7 +298,8 @@ void testApp::draw()
 	
 	// draw choir face triangles
 	if (drawTriangles) {
-		for (int i = 0; i < choirFaces.size(); i++) choirFaces[i].drawTriangle(choirVideos[0].getCurrentFrame());
+		// make sure choirVideos[interactionLevel] not [0]
+		for (int i = 0; i < choirFaces.size(); i++) choirFaces[i].drawTriangle(choirVideos[interactionLevel].getCurrentFrame());
 	}
 	
 	// draw debug images

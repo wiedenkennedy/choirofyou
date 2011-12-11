@@ -54,9 +54,10 @@ void ChoirFace::load(const string& fileName)
 	for (int i = 0; i < xml.getNumTags("FRAME"); ++i)
 	{
 		xml.pushTag("FRAME", i);
-		ofVec2f pt1(xml.getValue("POINT1:X", 0) + CROP_SHIFT.x, xml.getValue("POINT1:Y", 0) + CROP_SHIFT.y);
-		ofVec2f pt2(xml.getValue("POINT2:X", 0) + CROP_SHIFT.x, xml.getValue("POINT2:Y", 0) + CROP_SHIFT.y);
-		ofVec2f pt3(xml.getValue("POINT3:X", 0) + CROP_SHIFT.x, xml.getValue("POINT3:Y", 0) + CROP_SHIFT.y);
+		// co-ords in xml file are floats, not ints. Make sure default value is a float to prevent casting on getValue
+		ofVec2f pt1(xml.getValue("POINT1:X", 0.0f) + CROP_SHIFT.x, xml.getValue("POINT1:Y", 0.0f) + CROP_SHIFT.y);
+		ofVec2f pt2(xml.getValue("POINT2:X", 0.0f) + CROP_SHIFT.x, xml.getValue("POINT2:Y", 0.0f) + CROP_SHIFT.y);
+		ofVec2f pt3(xml.getValue("POINT3:X", 0.0f) + CROP_SHIFT.x, xml.getValue("POINT3:Y", 0.0f) + CROP_SHIFT.y);
 		frames.push_back(Frame(pt1, pt2, pt3));
 		xml.popTag();
 	}
