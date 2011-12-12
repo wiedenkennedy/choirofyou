@@ -9,6 +9,7 @@
 #include "LiveFace.h"
 #include "ChoirFace.h"
 #include "OscHandler.h"
+#include "ofxMovieExporter.h"
 
 using namespace ofxCv;
 
@@ -41,6 +42,8 @@ private:
 	float scaleFactor;
 	
 	ofBaseVideoDraws* videoPtr;
+	
+	Apex::ofxMovieExporter movieExporter;
 	
 #ifdef _LIVE
 	ofVideoGrabber cam;

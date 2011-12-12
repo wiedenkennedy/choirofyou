@@ -37,6 +37,8 @@ void testApp::setup()
 	
 	messageHandler.setup();
 	
+	movieExporter.setup();
+	
 #ifdef _LIVE
 	//cam.setDeviceID(2);
 	cam.initGrabber(width, height);
@@ -329,6 +331,11 @@ void testApp::draw()
 
 void testApp::keyPressed(int key)
 {
+	if (key == 'e')
+	{
+		if (movieExporter.isRecording()) movieExporter.stop();
+		else movieExporter.record();
+	}
 #ifdef _LIVE
 	if (key == 'v') cam.videoSettings();
 #endif
