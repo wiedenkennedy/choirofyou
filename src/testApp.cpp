@@ -18,7 +18,7 @@ void testApp::setup()
 	ofSetFrameRate(60);
 	fadeFrom = NULL;
 	fadeTo = NULL;
-	scaleFactor = 0.2;
+	scaleFactor = 0.7;
 	width = 640;
 	height = 480;
 	yShift = 96;
