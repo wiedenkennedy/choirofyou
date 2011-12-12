@@ -74,4 +74,5 @@ private:
 	OscHandler messageHandler;
 	
 	Lyrics merryXmasLyrics;
+	int latestLyric;
 };

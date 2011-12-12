@@ -36,6 +36,7 @@ void testApp::setup()
 	gui.addSlider("Face H stretch", faceHStretch, 0.1f, 0.9f);
 	
 	messageHandler.setup();
+	
 	merryXmasLyrics.setupLyrics();
 	
 #ifdef _LIVE
@@ -155,12 +156,25 @@ void testApp::update()
 			fadeTo->update();
 		}
 	}
-	if (currentMovieLevel == interactionLevel) choirVideos[interactionLevel].update();	
+	if (currentMovieLevel == interactionLevel) choirVideos[interactionLevel].update();
+	
+	// lyric update
+	latestLyric = merryXmasLyrics.updateLyrics();
+	//printf("isSinging = %i", merryXmasLyrics.isSinging);
+	
+	//show hide based on singing
+//	if (merryXmasLyrics.isSinging == 1) {
+//		interactionLevel = 1;
+//	} else if (merryXmasLyrics.isSinging == 0) {
+//		interactionLevel = 0;
+//	}
+	
 }
 
 
 void testApp::draw()
-{
+{	
+	
 	if ( currentMovieLevel != interactionLevel && fadeFrom && fadeTo )
 	{
 		ofEnableAlphaBlending();
@@ -171,8 +185,15 @@ void testApp::draw()
 		fadeTo->draw(0, yShift);
 		ofDisableAlphaBlending();
 	}
+	
 	else choirVideos[interactionLevel].draw(0, yShift);
 	
+	//show hide based on singing
+	if (merryXmasLyrics.isSinging == 1) {
+		interactionLevel = 2;
+	} else if (merryXmasLyrics.isSinging == 0) {
+		interactionLevel = 0;
+	}
 	
 	ofSetColor(255, 255, 255);
 	
@@ -301,8 +322,8 @@ void testApp::draw()
 	// draw lyrics
 	//string curLyrics = messageHandler.getLyric(); //"this is a lyrics test";
 	//merryXmasLyrics.drawLyrics(messageHandler.getLyric());
-	int oscLyricNum = 1;
-	merryXmasLyrics.drawLyrics(oscLyricNum);
+	//int oscLyricNum = 1;
+	merryXmasLyrics.drawLyrics(latestLyric);
 	
 	// draw choir face triangles
 	if (drawTriangles) {
