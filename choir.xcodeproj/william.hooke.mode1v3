@@ -272,7 +272,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>3</integer>
+									<integer>14</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -297,7 +297,7 @@
 							<real>242</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>16 112 1156 766 0 0 1440 878 </string>
+						<string>33 112 1156 766 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -315,7 +315,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>testApp.cpp</string>
+								<string>Lyrics.cpp</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -323,11 +323,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>testApp.cpp</string>
+										<string>Lyrics.cpp</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>7EB7AEA81495A1130025B699</string>
+										<string>7EB7AEAB1496D6DC0025B699</string>
 										<key>history</key>
 										<array>
 											<string>7EB7AC63149522820025B699</string>
@@ -344,9 +344,9 @@
 											<string>7EB7AE82149592880025B699</string>
 											<string>7EB7AE83149592880025B699</string>
 											<string>7EB7AE84149592880025B699</string>
-											<string>7EB7AE8A149593840025B699</string>
 											<string>7EB7AE8B149593840025B699</string>
-											<string>7EB7AE5214957F650025B699</string>
+											<string>7EB7AEA91496D6DC0025B699</string>
+											<string>7EB7AEAA1496D6DC0025B699</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -360,7 +360,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {892, 505}}</string>
 								<key>RubberWindowFrame</key>
-								<string>16 112 1156 766 0 0 1440 878 </string>
+								<string>33 112 1156 766 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -380,7 +380,7 @@
 								<key>Frame</key>
 								<string>{{0, 510}, {892, 215}}</string>
 								<key>RubberWindowFrame</key>
-								<string>16 112 1156 766 0 0 1440 878 </string>
+								<string>33 112 1156 766 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -552,7 +552,7 @@
 		<string>/Users/william.hooke/Documents/XmasWindow2011/of/of_preRelease_v007_osx/apps/final-choirofyou/choirofyou/choir.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>16 112 1156 766 0 0 1440 878 </string>
+	<string>33 112 1156 766 0 0 1440 878 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -900,7 +900,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1068, 652}}</string>
 								<key>RubberWindowFrame</key>
-								<string>810 185 1068 693 0 0 1440 878 </string>
+								<string>372 185 1068 693 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXDebugCLIModule</string>
@@ -929,7 +929,7 @@
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.consoleV3</string>
 			<key>WindowString</key>
-			<string>810 185 1068 693 0 0 1440 878 </string>
+			<string>372 185 1068 693 0 0 1440 878 </string>
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
